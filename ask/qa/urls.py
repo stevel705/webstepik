@@ -1,14 +1,14 @@
 from django.conf.urls import url
 from . import views 
 
-urlpatterns = [
-	url(r'^$', views.test), 
-	url(r'^login/$', views.test), 
-	url(r'^singup/$', views.test), 
-	url(r'^question/(?P<id>[0-9]+)/$', views.test), 
-	url(r'^ask/$', views.test),
- 	url(r'^popular/$', views.test), 
-	url(r'^new/$', views.test) 
-]
+urlpatterns = patterns('qa.views',                                              
+   url(r'^$', 'test'),                                                              
+   url(r'^login/.*$', 'test', name='login'),                                    
+   url(r'^signup/.*', 'test', name='signup'),                                   
+   url(r'^question/(?P<id>[0-9]+)/$', 'test', name='question'),                 
+   url(r'^ask/.*', 'test', name='ask'),                                         
+   url(r'^popular/.*', 'test', name='popular'),                                 
+   url(r'^new/.*', 'test', name='new'),                                         
+)    
 
 
